@@ -1,0 +1,4 @@
+# 讀書計畫來源 Excel 與臨時檔,不上傳到公開 repo
+*.xlsx
+dump_*.txt
+dump_xlsx.py

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家庭專區 | Neil Chen</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <span class="logo">家庭專區</span>
+      <nav>
+        <a href="index.html">回首頁</a>
+        <a href="plan-sister.html">姐姐的計畫</a>
+        <a href="plan-brother.html">弟弟的計畫</a>
+        <button id="themeToggle" class="theme-toggle" title="切換深淺色主題">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h2>我們一家</h2>
+      <p class="plan-note">點選姐姐或弟弟的卡片,查看讀書計畫。</p>
+
+      <div class="project-grid">
+        <div class="card">
+          <div class="member-emoji">👨</div>
+          <h3>爸爸</h3>
+          <p class="member-role">嵌入式系統工程師,家裡的讀書計畫總教練。</p>
+        </div>
+        <div class="card">
+          <div class="member-emoji">👩</div>
+          <h3>媽媽</h3>
+          <p class="member-role">家裡最溫暖的支柱。</p>
+        </div>
+        <a class="card card-link" href="plan-sister.html">
+          <div class="member-emoji">👧</div>
+          <h3>姐姐</h3>
+          <p class="member-role">高三,全力衝刺學測中。</p>
+          <p class="member-go">📖 查看讀書計畫 →</p>
+        </a>
+        <a class="card card-link" href="plan-brother.html">
+          <div class="member-emoji">👦</div>
+          <h3>弟弟</h3>
+          <p class="member-role">國三,暑假打好基礎。</p>
+          <p class="member-go">📖 查看讀書計畫 →</p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Neil Chen. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/plan.js"></script>
+</body>
+</html>

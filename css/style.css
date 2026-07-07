@@ -294,6 +294,155 @@ body {
   }
 }
 
+/* ===== 家庭專區 ===== */
+:root {
+  --today-bg: #fefcbf;
+}
+
+[data-theme="dark"] {
+  --today-bg: #4a4419;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.member-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-role {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.member-go {
+  margin-top: 0.8rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+/* ===== 讀書計畫頁 ===== */
+.container.wide {
+  max-width: 1200px;
+}
+
+.plan-note {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.plan-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.month-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.month-tabs button {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.month-tabs button.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.plan-controls select,
+.plan-controls input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.plan-controls input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.btn-today {
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.plan-table th,
+.plan-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.plan-table th {
+  background: var(--bg-alt);
+  white-space: nowrap;
+}
+
+.plan-table td:first-child {
+  white-space: nowrap;
+}
+
+.plan-table tr.weekend td {
+  color: var(--text-muted);
+  background: var(--bg-alt);
+}
+
+.plan-table tr.today td {
+  background: var(--today-bg);
+}
+
+.no-result {
+  padding: 1.5rem;
+  color: var(--text-muted);
+}
+
+.materials {
+  margin-top: 2rem;
+}
+
+.materials summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
 /* ===== 手機版 ===== */
 @media (max-width: 600px) {
   .hero h1 {
