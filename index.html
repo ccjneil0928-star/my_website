@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neil Chen | 個人網頁</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 捲動進度條 -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- 導覽列 -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <span class="logo">Neil Chen</span>
+      <nav>
+        <a href="#about">關於我</a>
+        <a href="#skills">技能</a>
+        <a href="#projects">作品</a>
+        <a href="#contact">聯絡</a>
+        <button id="themeToggle" class="theme-toggle" title="切換深淺色主題">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主視覺(含粒子背景) -->
+  <section class="hero">
+    <canvas id="particles"></canvas>
+    <div class="container hero-content">
+      <h1>你好,我是 <span class="accent">Neil Chen</span></h1>
+      <p class="subtitle"><span id="typing"></span><span class="cursor">|</span></p>
+      <a href="#contact" class="btn">與我聯絡</a>
+    </div>
+  </section>
+
+  <!-- 關於我 -->
+  <section id="about" class="section reveal">
+    <div class="container">
+      <h2>關於我</h2>
+      <p>
+        這裡寫下你的自我介紹。例如:目前的工作領域、專長方向、
+        工作經歷,或是你正在學習的技術與目標。
+      </p>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section id="skills" class="section section-alt reveal">
+    <div class="container">
+      <h2>技能</h2>
+      <ul class="skill-list">
+        <li>C / 嵌入式開發</li>
+        <li>Git 版本控制</li>
+        <li>Makefile / 交叉編譯</li>
+        <li>HTML / CSS / JavaScript</li>
+        <li>Python</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 作品 -->
+  <section id="projects" class="section reveal">
+    <div class="container">
+      <h2>作品</h2>
+      <div class="project-grid">
+        <div class="card">
+          <h3>專案名稱一</h3>
+          <p>簡短描述這個專案做了什麼、用了哪些技術。</p>
+        </div>
+        <div class="card">
+          <h3>專案名稱二</h3>
+          <p>簡短描述這個專案做了什麼、用了哪些技術。</p>
+        </div>
+        <div class="card">
+          <h3>專案名稱三</h3>
+          <p>簡短描述這個專案做了什麼、用了哪些技術。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡 -->
+  <section id="contact" class="section section-alt reveal">
+    <div class="container">
+      <h2>聯絡我</h2>
+      <p>Email:<a href="mailto:neilcj_chen@foxlinkimage.com">neilcj_chen@foxlinkimage.com</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Neil Chen. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

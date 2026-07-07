@@ -1,0 +1,311 @@
+/* ===== 主題變數 ===== */
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f7fafc;
+  --text: #2d3748;
+  --text-muted: #718096;
+  --border: #e2e8f0;
+  --accent: #2b6cb0;
+  --accent-hover: #2c5282;
+  --hero-from: #ebf4ff;
+  --card-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] {
+  --bg: #1a202c;
+  --bg-alt: #171923;
+  --text: #e2e8f0;
+  --text-muted: #a0aec0;
+  --border: #2d3748;
+  --accent: #63b3ed;
+  --accent-hover: #90cdf4;
+  --hero-from: #12161f;
+  --card-bg: #232b3b;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* ===== 基礎設定 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== 捲動進度條 ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #4299e1, #9f7aea);
+  z-index: 100;
+}
+
+/* ===== 導覽列 ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.25s;
+}
+
+.navbar nav a:hover {
+  color: var(--accent);
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+.theme-toggle {
+  margin-left: 1.5rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* ===== 主視覺 ===== */
+.hero {
+  position: relative;
+  padding: 6rem 0;
+  text-align: center;
+  background: linear-gradient(180deg, var(--hero-from) 0%, var(--bg) 100%);
+  overflow: hidden;
+}
+
+#particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  min-height: 1.7em;
+}
+
+.cursor {
+  animation: blink 0.9s steps(1) infinite;
+  color: var(--accent);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+/* ===== 區塊 ===== */
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.8rem;
+}
+
+/* ===== 捲動淡入 ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== 技能 ===== */
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-list li {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.skill-list li:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+/* ===== 作品卡片 ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px var(--shadow);
+  border-color: var(--accent);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+/* ===== 聯絡與頁尾 ===== */
+#contact a {
+  color: var(--accent);
+}
+
+.footer {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ===== 動畫 ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ===== 手機版 ===== */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .navbar nav a {
+    margin-left: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .theme-toggle {
+    margin-left: 0.8rem;
+  }
+}
