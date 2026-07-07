@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>弟弟的讀書計畫 | 家庭專區</title>
+  <title>貪吃蛇 | 小遊戲專區</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,24 +11,28 @@
   <!-- 導覽列 -->
   <header class="navbar">
     <div class="container nav-inner">
-      <span class="logo">家庭專區</span>
+      <span class="logo">小遊戲專區</span>
       <nav>
         <a href="index.html">回首頁</a>
         <a href="family.html">家庭專區</a>
-        <a href="plan-sister.html">姐姐的計畫</a>
+        <a href="games.html">遊戲專區</a>
         <button id="themeToggle" class="theme-toggle" title="切換深淺色主題">🌙</button>
       </nav>
     </div>
   </header>
 
   <main class="section">
-    <div class="container wide">
-      <h2>👦 弟弟的國三暑假讀書計畫</h2>
-      <p class="plan-note">
-        2026 年 7 月~8 月 · 點月份切換,可用科目篩選與關鍵字搜尋;今天的進度會以底色標示,按「📍 今天」可直接跳到。
-      </p>
+    <div class="container">
+      <h2>🐍 貪吃蛇</h2>
+      <p class="plan-note">電腦用方向鍵或 WASD 操作,手機直接在棋盤上滑動。吃到食物會加分,速度也會越來越快!</p>
 
-      <div id="plan"></div>
+      <div class="game-stats">
+        <span>分數:<b id="score">0</b></span>
+        <span>最高分:<b id="best">0</b></span>
+        <button id="startBtn" class="btn-game" type="button">開始遊戲</button>
+      </div>
+
+      <canvas id="snakeCanvas" width="400" height="400"></canvas>
     </div>
   </main>
 
@@ -39,10 +43,6 @@
   </footer>
 
   <script src="js/theme.js"></script>
-  <script src="js/plan-data.js"></script>
-  <script src="js/plan.js"></script>
-  <script>
-    renderPlan("plan", window.PLANS.brother);
-  </script>
+  <script src="js/game-snake.js"></script>
 </body>
 </html>

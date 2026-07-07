@@ -10,6 +10,8 @@
 - `family.html` — 家庭專區:四位成員卡片(爸爸、媽媽、姐姐、弟弟)
 - `plan-sister.html` — 姐姐(高三)學測讀書計畫,2026 年 7~12 月
 - `plan-brother.html` — 弟弟(國三)暑假讀書計畫,2026 年 7~8 月
+- `games.html` — 小遊戲專區首頁;四款遊戲:`game-memory.html`(記憶翻牌)、`game-snake.html`(貪吃蛇)、`game-2048.html`(2048)、`game-tictactoe.html`(井字棋),邏輯分別在 `js/game-*.js`,支援鍵盤與觸控,最佳紀錄存 localStorage
+- `js/theme.js` — 深淺色主題切換,家庭專區/計畫頁/遊戲頁共用(index.html 用的是 script.js 內建的版本)
 - `css/style.css` — 樣式,使用 CSS 變數支援深淺色主題(`[data-theme="dark"]`)
 - `js/script.js` — index.html 的互動效果:粒子背景(canvas)、打字機效果、深色模式切換(localStorage)、捲動淡入(IntersectionObserver)、捲動進度條
 - `js/plan.js` — 計畫頁共用:主題切換、計畫表格渲染(月份切換、欄位篩選、搜尋、今日標示)

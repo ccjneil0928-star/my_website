@@ -1,19 +1,3 @@
-// ===== 深色模式切換(計畫頁專用,與 script.js 邏輯相同)=====
-const themeToggle = document.getElementById("themeToggle");
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  document.documentElement.setAttribute("data-theme", savedTheme);
-  themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
-}
-
-themeToggle.addEventListener("click", () => {
-  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-  const next = isDark ? "light" : "dark";
-  document.documentElement.setAttribute("data-theme", next);
-  localStorage.setItem("theme", next);
-  themeToggle.textContent = next === "dark" ? "☀️" : "🌙";
-});
-
 // ===== 共用:HTML 跳脫 =====
 function esc(s) {
   return String(s)

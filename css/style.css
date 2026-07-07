@@ -443,6 +443,144 @@ body {
   margin-bottom: 0.8rem;
 }
 
+/* ===== 小遊戲專區 ===== */
+.game-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.game-stats span {
+  color: var(--text-muted);
+}
+
+.game-stats b {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.btn-game {
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.game-status {
+  min-height: 1.7em;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* 貪吃蛇 */
+#snakeCanvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  touch-action: none;
+}
+
+/* 2048 */
+.board-2048 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  max-width: 420px;
+  padding: 0.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  touch-action: none;
+}
+
+.board-2048 .tile {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: var(--card-bg);
+  color: #776e65;
+}
+
+.tile-2 { background: #eee4da; }
+.tile-4 { background: #ede0c8; }
+.tile-8 { background: #f2b179; color: #fff; }
+.tile-16 { background: #f59563; color: #fff; }
+.tile-32 { background: #f67c5f; color: #fff; }
+.tile-64 { background: #f65e3b; color: #fff; }
+.tile-128 { background: #edcf72; color: #fff; font-size: 1.25rem; }
+.tile-256 { background: #edcc61; color: #fff; font-size: 1.25rem; }
+.tile-512 { background: #edc850; color: #fff; font-size: 1.25rem; }
+.tile-1024 { background: #edc53f; color: #fff; font-size: 1.05rem; }
+.tile-2048, .tile-big { background: #edc22e; color: #fff; font-size: 1.05rem; }
+
+/* 井字棋 */
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  max-width: 330px;
+}
+
+.ttt-board button {
+  aspect-ratio: 1 / 1;
+  font-size: 2.2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ttt-board button.win {
+  border-color: var(--accent);
+  background: var(--today-bg);
+}
+
+/* 記憶翻牌 */
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  max-width: 440px;
+}
+
+.memory-board button {
+  aspect-ratio: 1 / 1;
+  font-size: 2rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+
+.memory-board button:hover {
+  transform: scale(1.04);
+}
+
+.memory-board button.open,
+.memory-board button.matched {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
+.memory-board button.matched {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+}
+
 /* ===== 手機版 ===== */
 @media (max-width: 600px) {
   .hero h1 {

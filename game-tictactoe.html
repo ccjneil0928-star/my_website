@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>井字棋 | 小遊戲專區</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <span class="logo">小遊戲專區</span>
+      <nav>
+        <a href="index.html">回首頁</a>
+        <a href="family.html">家庭專區</a>
+        <a href="games.html">遊戲專區</a>
+        <button id="themeToggle" class="theme-toggle" title="切換深淺色主題">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h2>⭕ 井字棋</h2>
+      <p class="plan-note">先連成一直線(橫、直、斜)就獲勝。可以兩人輪流玩,也可以挑戰電腦。</p>
+
+      <div class="game-stats">
+        <div class="month-tabs" id="modeTabs">
+          <button type="button" data-mode="2p" class="active">👥 雙人對戰</button>
+          <button type="button" data-mode="ai">🤖 挑戰電腦</button>
+        </div>
+        <button id="restart" class="btn-game" type="button">重新開始</button>
+      </div>
+      <div class="game-stats">
+        <span>❌ 勝場:<b id="xWins">0</b></span>
+        <span>⭕ 勝場:<b id="oWins">0</b></span>
+        <span>平手:<b id="draws">0</b></span>
+      </div>
+      <p class="game-status" id="status"></p>
+
+      <div class="ttt-board" id="board"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Neil Chen. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/game-tictactoe.js"></script>
+</body>
+</html>
