@@ -499,6 +499,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 8px;
   touch-action: none;
+  margin: 0 auto; /* 置中棋盤 */
 }
 
 .board-2048 .tile {
@@ -511,19 +512,261 @@ body {
   font-size: 1.5rem;
   background: var(--card-bg);
   color: #776e65;
+  user-select: none;
 }
 
-.tile-2 { background: #eee4da; }
-.tile-4 { background: #ede0c8; }
-.tile-8 { background: #f2b179; color: #fff; }
-.tile-16 { background: #f59563; color: #fff; }
-.tile-32 { background: #f67c5f; color: #fff; }
-.tile-64 { background: #f65e3b; color: #fff; }
-.tile-128 { background: #edcf72; color: #fff; font-size: 1.25rem; }
-.tile-256 { background: #edcc61; color: #fff; font-size: 1.25rem; }
-.tile-512 { background: #edc850; color: #fff; font-size: 1.25rem; }
-.tile-1024 { background: #edc53f; color: #fff; font-size: 1.05rem; }
-.tile-2048, .tile-big { background: #edc22e; color: #fff; font-size: 1.05rem; }
+/* 經典沙色 (Classic) - 預設 */
+.board-2048[data-game-theme="classic"] {
+  background: var(--bg-alt);
+  border-color: var(--border);
+}
+.board-2048[data-game-theme="classic"] .tile {
+  color: #776e65;
+}
+.board-2048[data-game-theme="classic"] .tile-2 { background: #eee4da; }
+.board-2048[data-game-theme="classic"] .tile-4 { background: #ede0c8; }
+.board-2048[data-game-theme="classic"] .tile-8 { background: #f2b179; color: #fff; }
+.board-2048[data-game-theme="classic"] .tile-16 { background: #f59563; color: #fff; }
+.board-2048[data-game-theme="classic"] .tile-32 { background: #f67c5f; color: #fff; }
+.board-2048[data-game-theme="classic"] .tile-64 { background: #f65e3b; color: #fff; }
+.board-2048[data-game-theme="classic"] .tile-128 { background: #edcf72; color: #fff; font-size: 1.25rem; }
+.board-2048[data-game-theme="classic"] .tile-256 { background: #edcc61; color: #fff; font-size: 1.25rem; }
+.board-2048[data-game-theme="classic"] .tile-512 { background: #edc850; color: #fff; font-size: 1.25rem; }
+.board-2048[data-game-theme="classic"] .tile-1024 { background: #edc53f; color: #fff; font-size: 1.05rem; }
+.board-2048[data-game-theme="classic"] .tile-2048, 
+.board-2048[data-game-theme="classic"] .tile-big { background: #edc22e; color: #fff; font-size: 1.05rem; }
+
+/* 霓虹幻彩 (Neon Cyberpunk) */
+.board-2048[data-game-theme="neon"] {
+  background: #0d0f17;
+  border-color: #f43f5e;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.25);
+}
+.board-2048[data-game-theme="neon"] .tile {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.board-2048[data-game-theme="neon"] .tile-2 { background: linear-gradient(135deg, #1e1b4b, #311042); border-color: #4f46e5; color: #818cf8; }
+.board-2048[data-game-theme="neon"] .tile-4 { background: linear-gradient(135deg, #3b0764, #4c0519); border-color: #c084fc; color: #e9d5ff; }
+.board-2048[data-game-theme="neon"] .tile-8 { background: linear-gradient(135deg, #0284c7, #0369a1); border-color: #38bdf8; color: #e0f2fe; box-shadow: 0 0 8px rgba(56, 189, 248, 0.4); }
+.board-2048[data-game-theme="neon"] .tile-16 { background: linear-gradient(135deg, #059669, #047857); border-color: #34d399; color: #ecfdf5; box-shadow: 0 0 8px rgba(52, 211, 153, 0.4); }
+.board-2048[data-game-theme="neon"] .tile-32 { background: linear-gradient(135deg, #d97706, #b45309); border-color: #fbbf24; color: #fffbeb; box-shadow: 0 0 8px rgba(251, 191, 36, 0.4); }
+.board-2048[data-game-theme="neon"] .tile-64 { background: linear-gradient(135deg, #ea580c, #c2410c); border-color: #fb923c; color: #fff7ed; box-shadow: 0 0 8px rgba(251, 146, 60, 0.4); }
+.board-2048[data-game-theme="neon"] .tile-128 { background: linear-gradient(135deg, #dc2626, #b91c1c); border-color: #f87171; color: #fef2f2; font-size: 1.25rem; box-shadow: 0 0 10px rgba(248, 113, 113, 0.5); }
+.board-2048[data-game-theme="neon"] .tile-256 { background: linear-gradient(135deg, #c026d3, #a21caf); border-color: #f472b6; color: #fdf2f8; font-size: 1.25rem; box-shadow: 0 0 12px rgba(244, 114, 182, 0.5); }
+.board-2048[data-game-theme="neon"] .tile-512 { background: linear-gradient(135deg, #7c3aed, #6d28d9); border-color: #a78bfa; color: #f5f3ff; font-size: 1.25rem; box-shadow: 0 0 14px rgba(167, 139, 250, 0.6); }
+.board-2048[data-game-theme="neon"] .tile-1024 { background: linear-gradient(135deg, #0891b2, #0e7490); border-color: #22d3ee; color: #ecfeff; font-size: 1.05rem; box-shadow: 0 0 16px rgba(34, 211, 238, 0.7); }
+.board-2048[data-game-theme="neon"] .tile-2048,
+.board-2048[data-game-theme="neon"] .tile-big { background: linear-gradient(135deg, #f43f5e, #be123c); border-color: #fda4af; color: #fff; font-size: 1.05rem; box-shadow: 0 0 20px rgba(244, 63, 94, 0.8); }
+
+/* 優雅莫蘭迪 (Morandi pastel) */
+.board-2048[data-game-theme="morandi"] {
+  background: #f0ede9;
+  border-color: #dfd8cf;
+}
+.board-2048[data-game-theme="morandi"] .tile {
+  color: #fff;
+  font-weight: 600;
+}
+.board-2048[data-game-theme="morandi"] .tile-2 { background: #c6d0c5; color: #4e5a4d; }
+.board-2048[data-game-theme="morandi"] .tile-4 { background: #d4c3b3; color: #5c4d3f; }
+.board-2048[data-game-theme="morandi"] .tile-8 { background: #b8c8cc; }
+.board-2048[data-game-theme="morandi"] .tile-16 { background: #ccbed3; }
+.board-2048[data-game-theme="morandi"] .tile-32 { background: #d1bebe; }
+.board-2048[data-game-theme="morandi"] .tile-64 { background: #bcd1c5; }
+.board-2048[data-game-theme="morandi"] .tile-128 { background: #9bb097; font-size: 1.25rem; }
+.board-2048[data-game-theme="morandi"] .tile-256 { background: #ac9b8b; font-size: 1.25rem; }
+.board-2048[data-game-theme="morandi"] .tile-512 { background: #92a5a9; font-size: 1.25rem; }
+.board-2048[data-game-theme="morandi"] .tile-1024 { background: #a292a9; font-size: 1.05rem; }
+.board-2048[data-game-theme="morandi"] .tile-2048,
+.board-2048[data-game-theme="morandi"] .tile-big { background: #aa8585; font-size: 1.05rem; }
+
+/* 森林果實 (Forest Berries) */
+.board-2048[data-game-theme="forest"] {
+  background: #edf1ec;
+  border-color: #d1ddd5;
+}
+.board-2048[data-game-theme="forest"] .tile {
+  color: #fff;
+}
+.board-2048[data-game-theme="forest"] .tile-2 { background: #dce7d4; color: #4a5d3f; }
+.board-2048[data-game-theme="forest"] .tile-4 { background: #cbdcb8; color: #3b4e31; }
+.board-2048[data-game-theme="forest"] .tile-8 { background: #abc699; color: #2e4324; }
+.board-2048[data-game-theme="forest"] .tile-16 { background: #81ac6b; }
+.board-2048[data-game-theme="forest"] .tile-32 { background: #608d48; }
+.board-2048[data-game-theme="forest"] .tile-64 { background: #3f6c26; }
+.board-2048[data-game-theme="forest"] .tile-128 { background: #ec9f9f; color: #5a2727; font-size: 1.25rem; }
+.board-2048[data-game-theme="forest"] .tile-256 { background: #df7a7a; font-size: 1.25rem; }
+.board-2048[data-game-theme="forest"] .tile-512 { background: #ce5454; font-size: 1.25rem; }
+.board-2048[data-game-theme="forest"] .tile-1024 { background: #b73232; font-size: 1.05rem; }
+.board-2048[data-game-theme="forest"] .tile-2048,
+.board-2048[data-game-theme="forest"] .tile-big { background: #961b1b; font-size: 1.05rem; }
+
+/* 方塊誕生與合併動畫 */
+@keyframes tile-appear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes tile-merge {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tile-new {
+  animation: tile-appear 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.tile-merged {
+  animation: tile-merge 0.18s ease-in-out forwards;
+}
+
+/* 遊戲控制面板與提示區樣式 */
+.game-controls-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto 1.2rem;
+  padding: 1rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  max-width: 420px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.select-game {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.3s;
+}
+
+.select-game:focus {
+  border-color: var(--accent);
+}
+
+.btn-secondary {
+  background: var(--text-muted) !important;
+}
+.btn-secondary:hover {
+  background: var(--text) !important;
+}
+
+/* AI 提示顯示 */
+.ai-hint-card {
+  max-width: 420px;
+  margin: 0 auto 1.2rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(66, 153, 225, 0.08);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.ai-hint-card.highlight {
+  background: rgba(66, 153, 225, 0.15);
+  transform: scale(1.02);
+}
+
+.hint-title {
+  font-weight: 700;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.hint-content {
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.hint-direction {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 4px;
+  font-weight: 700;
+  margin: 0 0.2rem;
+}
+
+/* 關閉即時提示時的開關樣式 */
+.toggle-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-switch .slider {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: var(--border);
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.toggle-switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: var(--accent);
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
 
 /* 井字棋 */
 .ttt-board {
