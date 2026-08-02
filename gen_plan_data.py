@@ -40,7 +40,7 @@ def load_plan(path):
 
 
 brother_months, _ = load_plan("弟弟暑假讀書計畫.xlsx")
-sister_months, sister_extra = load_plan("姐姐暑假讀書計畫_H版_修訂.xlsx")
+sister_months, sister_extra = load_plan("姐姐暑假讀書計畫_K版.xlsx")
 
 plans = {
     "brother": {
