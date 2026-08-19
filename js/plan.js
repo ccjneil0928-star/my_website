@@ -134,17 +134,66 @@ function renderPlan(rootId, plan) {
   render();
 }
 
-// ===== 靜態表格(教材核對表)=====
-function renderSimpleTable(rootId, table) {
-  if (!table) return;
+// ===== 額外工作表(教材核對表、各科單元進度表...),各自可收合、可搜尋 =====
+function renderExtras(rootId, extras) {
+  if (!extras || !extras.length) return;
   const root = document.getElementById(rootId);
-  const thead = `<tr>${table.headers
-    .map((h) => `<th>${esc(h)}</th>`)
-    .join("")}</tr>`;
-  const tbody = table.rows
-    .map(
-      (r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`
-    )
-    .join("");
-  root.innerHTML = `<div class="table-wrap"><table class="plan-table"><thead>${thead}</thead><tbody>${tbody}</tbody></table></div>`;
+
+  extras.forEach((table) => {
+    const details = document.createElement("details");
+    details.className = "materials";
+
+    const summary = document.createElement("summary");
+    summary.textContent = `📚 ${table.name}`;
+
+    const body = document.createElement("div");
+    details.append(summary, body);
+    root.appendChild(details);
+
+    renderSearchableTable(body, table);
+  });
+}
+
+function renderSearchableTable(container, table) {
+  let keyword = "";
+
+  const search = document.createElement("input");
+  search.type = "search";
+  search.className = "extra-search";
+  search.placeholder = "搜尋關鍵字";
+  search.addEventListener("input", () => {
+    keyword = search.value.trim();
+    render();
+  });
+
+  const wrap = document.createElement("div");
+  wrap.className = "table-wrap";
+  container.append(search, wrap);
+
+  function render() {
+    let rows = table.rows;
+    if (keyword) {
+      const kw = keyword.toLowerCase();
+      rows = rows.filter((r) =>
+        r.some((c) => (c || "").toLowerCase().includes(kw))
+      );
+    }
+
+    if (rows.length === 0) {
+      wrap.innerHTML = `<p class="no-result">找不到符合「${esc(
+        keyword
+      )}」的內容</p>`;
+      return;
+    }
+
+    const thead = `<tr>${table.headers
+      .map((h) => `<th>${esc(h)}</th>`)
+      .join("")}</tr>`;
+    const tbody = rows
+      .map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`)
+      .join("");
+    wrap.innerHTML = `<table class="plan-table"><thead>${thead}</thead><tbody>${tbody}</tbody></table>`;
+  }
+
+  render();
 }

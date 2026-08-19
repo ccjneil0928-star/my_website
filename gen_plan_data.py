@@ -11,10 +11,10 @@ def clean(v):
 
 
 def load_plan(path):
-    """回傳 (months, extra):月份工作表清單與非月份工作表(如教材核對表)"""
+    """回傳 (months, extras):月份工作表清單、與其餘非月份工作表(教材核對表、各科進度表...)"""
     wb = openpyxl.load_workbook(path, data_only=True)
     months = []
-    extra = None
+    extras = []
     for ws in wb.worksheets:
         title = ws.title.strip()
         rows = []
@@ -35,12 +35,12 @@ def load_plan(path):
         if "月" in title:
             months.append(sheet)
         else:
-            extra = sheet
-    return months, extra
+            extras.append(sheet)
+    return months, extras
 
 
 brother_months, _ = load_plan("弟弟暑假讀書計畫.xlsx")
-sister_months, sister_extra = load_plan("姐姐暑假讀書計畫_L版.xlsx")
+sister_months, sister_extras = load_plan("姐姐暑假讀書計畫_M版.xlsx")
 
 plans = {
     "brother": {
@@ -52,7 +52,7 @@ plans = {
         "title": "姐姐的高三學測讀書計畫",
         "period": "2026 年 7 月~12 月",
         "months": sister_months,
-        "materials": sister_extra,
+        "extras": sister_extras,
     },
 }
 

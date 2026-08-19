@@ -8,7 +8,7 @@
 ## 檔案結構
 - `index.html` — 單頁式網頁:主視覺、關於我、技能、作品、聯絡五個區塊
 - `family.html` — 家庭專區:四位成員卡片(爸爸、媽媽、姐姐、弟弟)
-- `plan-sister.html` — 姐姐(高三)學測讀書計畫,2026 年 7~12 月
+- `plan-sister.html` — 姐姐(高三)學測讀書計畫,2026 年 7~12 月;月曆式計畫外,還會列出 Excel 裡所有「非月份」工作表(教材核對表、各科單元進度表等),各自可收合、可關鍵字搜尋
 - `plan-brother.html` — 弟弟(國三)暑假讀書計畫,2026 年 7~8 月
 - `games.html` — 小遊戲專區首頁;四款遊戲:`game-memory.html`(記憶翻牌)、`game-snake.html`(貪吃蛇)、`game-2048.html`(2048)、`game-tictactoe.html`(井字棋),邏輯分別在 `js/game-*.js`,支援鍵盤與觸控,最佳紀錄存 localStorage
 - `js/theme.js` — 深淺色主題切換,家庭專區/計畫頁/遊戲頁共用(index.html 用的是 script.js 內建的版本)
@@ -16,7 +16,7 @@
 - `js/script.js` — index.html 的互動效果:粒子背景(canvas)、打字機效果、深色模式切換(localStorage)、捲動淡入(IntersectionObserver)、捲動進度條
 - `js/plan.js` — 計畫頁共用:主題切換、計畫表格渲染(月份切換、欄位篩選、搜尋、今日標示)
 - `js/plan-data.js` — 由 `gen_plan_data.py` 自動產生的計畫資料,勿手動編輯
-- `gen_plan_data.py` — 讀取專案根目錄的兩份讀書計畫 Excel,產生 `js/plan-data.js`;Excel 更新後執行 `py gen_plan_data.py` 重新產生
+- `gen_plan_data.py` — 讀取專案根目錄的兩份讀書計畫 Excel,產生 `js/plan-data.js`;Excel 更新後執行 `py gen_plan_data.py` 重新產生。工作表名稱含「月」歸類為 `months`(月曆式),其餘全部歸類為 `extras`(各科單元進度表等,依 Excel 內順序全部保留)
 - 來源 Excel(`*.xlsx`)已列入 `.gitignore`,只存在本機,不上傳公開 repo
 
 ## 部署狀態(2026-07-07 完成)

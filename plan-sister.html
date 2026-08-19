@@ -30,10 +30,8 @@
 
       <div id="plan"></div>
 
-      <details class="materials">
-        <summary>📚 教材核對表(單字、片語、句型的實際數量)</summary>
-        <div id="materials"></div>
-      </details>
+      <h3 class="extras-title">📖 各科單元進度表</h3>
+      <div id="extras"></div>
     </div>
   </main>
 
@@ -48,7 +46,7 @@
   <script src="js/plan.js"></script>
   <script>
     renderPlan("plan", window.PLANS.sister);
-    renderSimpleTable("materials", window.PLANS.sister.materials);
+    renderExtras("extras", window.PLANS.sister.extras);
   </script>
 </body>
 </html>
